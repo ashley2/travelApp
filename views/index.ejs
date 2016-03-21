@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script src="bower_components/angular-contenteditable/angular-contenteditable.js"></script>
+  <script src="module.js"></script>
+  <script src="javascripts/destCtrl.js"></script>
+  <script src="services/Dest.js"></script>
+
+
+</head>
+
+<body ng-app="destApp" ng-controller="destCtrl">
+  <div id="headCont">
+    <div id="textCont">
+      <div id="header">myList<i class="fa fa-globe"></i></div>
+      <div id="directions"> “I haven’t been everywhere, but it’s on my list.” – Susan Sontag</div>
+    </div>
+  </div>
+
+  <div id="mainPage" ng-hide="viewDest">
+    <div id="inputContainer">
+      <input type="img" placeholder="Photo URL" ng-model="newDest.photo">
+      <input type="text" placeholder="City" ng-model="newDest.city"> 
+      <input type="text" placeholder="Country" ng-model="newDest.country">
+      <input type="number" placeholder="Price" ng-model="newDest.price">
+      <button id="addDest" ng-click="addDest()">Add Destination</button>
+    </div>
+
+    <div id="container">
+      <table class="table table-responsive table-bordered">
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Price</th>
+            <th>See More</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr ng-repeat="dest in destinations track by $index">
+            <td><img ng-src="{{dest.photo}}"></td>
+            <td id=tableName>{{dest.city}}</td>
+            <td id=tableName>{{dest.country}}</td>
+            <td id=tablePrice>{{dest.price | currency}}</td>
+            <td id="seeMore">
+              <button ng-click="seeMore(dest)">View More</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>  
+    </div>
+  </div>
+
+
+  <div id="container2">
+    <div id="detailView" ng-if="viewDest">
+      <div class="row location">
+        <div contenteditable="true" id="cityName" type="text" placeholder="City" ng-model="viewDest.city"></div>,
+        <div contenteditable="true" id="countryName" type="text" placeholder="Country" ng-model="viewDest.country"></div>
+      </div>
+      <div class="row">
+        <div class="image-col">
+        <label>Image URL:</label>
+         <div contenteditable="true" id="image" type="text" placeholder="dest URL" ng-model="viewDest.photo"></div><br>
+         <img id="photo" ng-src="{{viewDest.photo}}">
+       </div><div class="munnies-col">
+
+         <label for="">Price:</label>
+         <div contenteditable="true" id="price" type="number" placeholder="Price" ng-model="viewDest.price" value="viewDest.moneyNeeded"></div><br>
+         <label for="">Money Saved:</label>
+         <div contenteditable="true" id="saved" type="number" placeholder="$$" ng-model="viewDest.saved"></div><br>
+         <label for="">Money Needed:</label>
+         <div contenteditable="true" id="needed" type="number" placeholder="$$" >{{viewDest.price - viewDest.saved | currency}}</div><br>
+         <textarea id="notes" type="textarea"placeholder="notes..." cols="9" rows="1" ng-model="viewDest.notes"></textarea>
+       </div>
+     </div>
+     <!-- <div class="row"> -->
+     <!-- </div> -->
+     <button ng-click="seeLess()">See Less</button>
+     <button ng-click="update(viewDest)">Save</button>
+
+     <button id="delete" ng-click="deleteDest(viewDest)">
+      Delete</button>
+    </div>
+  </div>
+
+</body>
+
+
+
+<!-- add date -->
+<!-- add checkbox -->
+
