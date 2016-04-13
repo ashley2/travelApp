@@ -14,7 +14,7 @@
     "gulp": "^3.9.1",
     "gulp-minify-css": "^1.2.4",
     "gulp-sass": "^2.2.0",
-    "mongoose": "^4.4.8",
+    "mongoose": "^4.4.12",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
     "uuid": "^2.0.1"

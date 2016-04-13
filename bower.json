@@ -1,0 +1,14 @@
+{
+  "name": "travel-app",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/ashley2/travelApp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
