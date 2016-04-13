@@ -28,7 +28,6 @@ app.controller('destCtrl', function($scope, DestService){
   $scope.viewDest = null;
 
   $scope.seeMore = function(dest){
-    console.log(dest);
     $scope.viewDest = dest;
   }
 

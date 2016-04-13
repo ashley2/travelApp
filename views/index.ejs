@@ -36,25 +36,17 @@
       <input type="number" placeholder="Price" ng-model="newDest.price">
       <button id="addDest" ng-click="addDest()">Add Destination</button>
     </div>
+    
 
     <div id="container">
       <table class="table table-responsive table-bordered">
         <thead>
-          <tr>
-            <th>Photo</th>
-            <th>City</th>
-            <th>Country</th>
-            <th>Price</th>
-            <th>See More</th>
-          </tr>
         </thead>
         <tbody>
 
           <tr ng-repeat="dest in destinations track by $index">
             <td><img ng-src="{{dest.photo}}"></td>
-            <td id=tableName>{{dest.city}}</td>
-            <td id=tableName>{{dest.country}}</td>
-            <td id=tablePrice>{{dest.price | currency}}</td>
+            <td id="tableName">{{dest.city}} {{dest.country}} {{dest.price | currency}}</td>
             <td id="seeMore">
               <button ng-click="seeMore(dest)">View More</button>
             </td>
@@ -87,8 +79,6 @@
          <textarea id="notes" type="textarea"placeholder="notes..." cols="9" rows="1" ng-model="viewDest.notes"></textarea>
        </div>
      </div>
-     <!-- <div class="row"> -->
-     <!-- </div> -->
      <button ng-click="seeLess()">See Less</button>
      <button ng-click="update(viewDest)">Save</button>
 
