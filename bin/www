@@ -9,7 +9,15 @@ var debug = require('debug')('travel-app:server');
 var http = require('http');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/destinations')
+
+const mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/destinatons'
+require("mongoose").connect(mongoUrl, function(err){
+  if(err){
+    console.log(err);
+  } else {
+    console.log(`MongoDB connected! ${mongoUrl}`);
+  }
+});
 
 /**
  * Get port from environment and store in Express.
