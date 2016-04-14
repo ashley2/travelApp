@@ -30,10 +30,35 @@
 
   <div id="mainPage" ng-hide="viewDest">
     <div id="inputContainer">
-      <input type="img" placeholder="Photo URL" ng-model="newDest.photo">
-      <input type="text" placeholder="City" ng-model="newDest.city"> 
-      <input type="text" placeholder="Country" ng-model="newDest.country">
-      <input type="number" placeholder="Price" ng-model="newDest.price">
+
+
+      <span class="input-top">
+        <input class="input-field-top" type="img" ng-model="newDest.photo" />
+        <label class="input-label-top">
+          <span class="input__label-content">Photo URL</span>
+        </label>
+      </span>
+
+      <span class="input-top">
+        <input class="input-field-top" type="text" ng-model="newDest.city" />
+        <label class="input-label-top">
+          <span class="input__label-content">City</span>
+        </label>
+      </span>
+
+      <span class="input-top">
+        <input class="input-field-top" type="text" ng-model="newDest.country" />
+        <label class="input-label-top">
+          <span class="input__label-content">Country</span>
+        </label>
+      </span>
+
+      <span class="input-top">
+        <input class="input-field-top" type="number" ng-model="newDest.price" />
+        <label class="input-label-top">
+          <span class="input__label-content">Price</span>
+        </label>
+      </span>
       <button id="addDest" ng-click="addDest()">Add Destination</button>
     </div>
     
@@ -65,24 +90,24 @@
       </div>
       <div class="row">
         <div class="image-col">
-        <label>Image URL:</label>
-         <div contenteditable="true" id="image" type="text" placeholder="dest URL" ng-model="viewDest.photo"></div><br>
-         <img id="photo" ng-src="{{viewDest.photo}}">
-       </div><div class="munnies-col">
+          <label>Image URL:</label>
+          <div contenteditable="true" id="image" type="text" placeholder="dest URL" ng-model="viewDest.photo"></div><br>
+          <img id="photo" ng-src="{{viewDest.photo}}">
+        </div><div class="munnies-col">
 
-         <label for="">Price:</label>
-         <div contenteditable="true" id="price" type="number" placeholder="Price" ng-model="viewDest.price" value="viewDest.moneyNeeded"></div><br>
-         <label for="">Money Saved:</label>
-         <div contenteditable="true" id="saved" type="number" placeholder="$$" ng-model="viewDest.saved"></div><br>
-         <label for="">Money Needed:</label>
-         <div contenteditable="true" id="needed" type="number" placeholder="$$" >{{viewDest.price - viewDest.saved | currency}}</div><br>
-         <textarea id="notes" type="textarea"placeholder="notes..." cols="9" rows="1" ng-model="viewDest.notes"></textarea>
-       </div>
-     </div>
-     <button ng-click="seeLess()">See Less</button>
-     <button ng-click="update(viewDest)">Save</button>
+        <label for="">Price:</label>
+        <div contenteditable="true" id="price" type="number" placeholder="Price" ng-model="viewDest.price" value="viewDest.moneyNeeded"></div><br>
+        <label for="">Money Saved:</label>
+        <div contenteditable="true" id="saved" type="number" placeholder="$$" ng-model="viewDest.saved"></div><br>
+        <label for="">Money Needed:</label>
+        <div contenteditable="true" id="needed" type="number" placeholder="$$" >{{viewDest.price - viewDest.saved | currency}}</div><br>
+        <textarea id="notes" type="textarea"placeholder="notes..." cols="9" rows="1" ng-model="viewDest.notes"></textarea>
+      </div>
+    </div>
+    <button ng-click="seeLess()">See Less</button>
+    <button ng-click="update(viewDest)">Save</button>
 
-     <button id="delete" ng-click="deleteDest(viewDest)">
+    <button id="delete" ng-click="deleteDest(viewDest)">
       Delete</button>
     </div>
   </div>
