@@ -29,11 +29,12 @@
   </div>
 
   <div id="mainPage" ng-hide="viewDest">
+
+    <div id="question">Where will your next adventure be?</div>
+
     <div id="inputContainer">
-
-
       <span class="input-top">
-        <input class="input-field-top" type="img" ng-model="newDest.photo" />
+        <input class="input-field-top" type="img" ng-model="newDest.photo"/>
         <label class="input-label-top">
           <span class="input__label-content">Photo URL</span>
         </label>
@@ -100,7 +101,7 @@
         <label for="">Money Saved:</label>
         <div contenteditable="true" id="saved" type="number" placeholder="$$" ng-model="viewDest.saved"></div><br>
         <label for="">Money Needed:</label>
-        <div contenteditable="true" id="needed" type="number" placeholder="$$" >{{viewDest.price - viewDest.saved | currency}}</div><br>
+        <div id="needed" type="number" placeholder="$$" >{{viewDest.price - viewDest.saved | currency}}</div><br>
         <textarea id="notes" type="textarea"placeholder="notes..." cols="9" rows="1" ng-model="viewDest.notes"></textarea>
       </div>
     </div>
