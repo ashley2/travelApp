@@ -11,7 +11,7 @@ app.controller('destCtrl', function($scope, DestService){
     
 
   }, function(err){
-    console.error(err);
+    console.log(err);
   });
 
 
