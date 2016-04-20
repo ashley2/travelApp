@@ -10,7 +10,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 
 
-const mongoUrl = process.env.MONGOLAB_URI || MONGODB_URI || 'mongodb://localhost/destinatons'
+const mongoUrl = process.env.MONGOLAB_URI || process.env.MONGODB_URI || 'mongodb://localhost/destinatons'
 require("mongoose").connect(mongoUrl, function(err){
   if(err){
     console.log(err);
