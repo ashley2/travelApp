@@ -38,7 +38,7 @@ app.controller('destCtrl', function($scope, DestService){
   $scope.update = function(viewDest){
     DestService.update(viewDest)
     .then(function(){
-      swal("Great!", "Your dest has been saved!", "success")
+      swal("Great!", "Your adventure has been saved!", "success")
     }, function(err){
       console.log(err);
     })
@@ -46,7 +46,7 @@ app.controller('destCtrl', function($scope, DestService){
 
   $scope.deleteDest = function(dest){
     swal({   title: "Are you sure?",   
-      text: "You will not be able to recover this destinations info!",
+      text: "You will not be able to recover this adventures info!",
       type: "warning",
       showCancelButton: true, 
       confirmButtonColor: "#DD6B55", 
@@ -59,7 +59,7 @@ app.controller('destCtrl', function($scope, DestService){
           $scope.destinations.splice(index, 1);
           $scope.viewDest = null;
           swal("Deleted!",
-           "Your dest has been deleted.",
+           "Your adventure has been deleted.",
            "success"); 
         })
       }, function(err){
