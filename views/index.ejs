@@ -85,20 +85,24 @@
 
   <div id="container2">
     <div id="detailView" ng-if="viewDest">
-      <div class="row location">
-        <div contenteditable="true" id="cityName" type="text" placeholder="City" ng-model="viewDest.city"></div>,
-        <div contenteditable="true" id="countryName" type="text" placeholder="Country" ng-model="viewDest.country"></div>
+    <div id="locationCont">
+        <div class="row location">
+          <div contenteditable="true" id="cityName" type="text" placeholder="City" ng-model="viewDest.city"></div>
+        </div>
+        <div class="row location2">
+          <div contenteditable="true" id="countryName" type="text" placeholder="Country" ng-model="viewDest.country"></div>
+        </div>
       </div>
       <div class="row">
         <div class="image-col">
-          <label>Image URL:</label>
+          <label id="imgUrl">Image URL:</label>
           <div contenteditable="true" id="image" type="text" placeholder="dest URL" ng-model="viewDest.photo"></div><br>
           <img id="photo" ng-src="{{viewDest.photo}}">
         </div><div class="munnies-col">
 
-        <label for="">Price:</label>
+        <label for="">Price: $</label>
         <div contenteditable="true" id="price" type="number" placeholder="Price" ng-model="viewDest.price" value="viewDest.moneyNeeded"></div><br>
-        <label for="">Money Saved:</label>
+        <label for="">Money Saved: $</label>
         <div contenteditable="true" id="saved" type="number" placeholder="$$" ng-model="viewDest.saved"></div><br>
         <label for="">Money Needed:</label>
         <div id="needed" type="number" placeholder="$$" >{{viewDest.price - viewDest.saved | currency}}</div><br>
