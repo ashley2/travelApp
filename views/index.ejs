@@ -85,17 +85,15 @@
 
   <div id="container2">
     <div id="detailView" ng-if="viewDest">
-    <div id="locationCont">
-        <div class="row location">
-          <div contenteditable="true" id="cityName" type="text" placeholder="City" ng-model="viewDest.city"></div>
+      <div class="row location">
+        <div contenteditable="true" id="cityName" type="text" placeholder="City" ng-model="viewDest.city"></div>
         </div>
         <div class="row location2">
-          <div contenteditable="true" id="countryName" type="text" placeholder="Country" ng-model="viewDest.country"></div>
-        </div>
+        <div contenteditable="true" id="countryName" type="text" placeholder="Country" ng-model="viewDest.country"></div>
       </div>
       <div class="row">
         <div class="image-col">
-          <label id="imgUrl">Image URL:</label>
+          <label>Image URL:</label>
           <div contenteditable="true" id="image" type="text" placeholder="dest URL" ng-model="viewDest.photo"></div><br>
           <img id="photo" ng-src="{{viewDest.photo}}">
         </div><div class="munnies-col">

@@ -230,23 +230,22 @@ button {
 #imgUrl {
   text-align: left;
 }
+
+
+
 #countryName, #cityName {
   text-align: center;
-  // position: rel;
+  position: relative;
   width: 500px;
   margin: 0 auto;
   &:hover:after{
     content: "Click To Edit";
-    position: relative;
+    position: absolute;
   }
   &:focus {
     outline: none;
   }
 }
-
-// #locationCont {
-//   position: absolute;
-// }
 
 
 #saved, #needed, #price {
