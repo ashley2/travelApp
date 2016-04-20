@@ -4,13 +4,21 @@ var app = angular.module('destApp');
 
 app.service('DestService', function($http){
 
-  this.getAll = () => $http.get('/destinations')
+  this.getAll = function() {
+    return $http.get('/destinations')
+  }
 
-  this.create = (newDest) => $http.post('/destinations', newDest);
+  this.create = function(newDest) {
+    return $http.post('/destinations', newDest);
+  }
 
-  this.delete = (dest)  => $http.delete(`/destinations/${dest._id}`)
+  this.delete = function(dest) {
+    return $http.delete(`/destinations/${dest._id}`)
+  }
 
-  this.update = (editDest) => $http.put('/destinations', editDest);
+  this.update = function(editDest) {
+    return $http.put('/destinations', editDest);
+  }
 })
 
 
